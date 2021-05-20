@@ -4,72 +4,72 @@ matrix:
     - docker
     name: Docker Version
     script:
-      - docker --version
+    - docker --version
   - services:
     - docker
     name: Amazon Linux 1
     script:
-      - ./Dockerfiles/amazonlinux/1/manage.sh build clean
+    - "./Dockerfiles/amazonlinux/1/manage.sh build clean"
   - services:
     - docker
     name: Amazon Linux 2
     script:
-      - ./Dockerfiles/amazonlinux/2/manage.sh build clean
+    - "./Dockerfiles/amazonlinux/2/manage.sh build clean"
   - services:
     - docker
     name: Centos 7
     script:
-      - ./Dockerfiles/centos/7/manage.sh build clean
+    - "./Dockerfiles/centos/7/manage.sh build clean"
   - services:
     - docker
     name: Centos 8
     script:
-      - ./Dockerfiles/centos/8/manage.sh build clean
+    - "./Dockerfiles/centos/8/manage.sh build clean"
   - services:
     - docker
     name: Debian 9 (Stretch)
     script:
-      - ./Dockerfiles/debian/9/manage.sh build clean
+    - "./Dockerfiles/debian/9/manage.sh build clean"
   - services:
     - docker
     name: Debian 9 (Stretch Slim)
     script:
-      - ./Dockerfiles/debian/9-slim/manage.sh build clean
+    - "./Dockerfiles/debian/9-slim/manage.sh build clean"
   - services:
     - docker
     name: Debian 10 (Buster)
     script:
-      - ./Dockerfiles/debian/10/manage.sh build clean
+    - "./Dockerfiles/debian/10/manage.sh build clean"
   - services:
     - docker
     name: Debian 10 (Buster Slim)
     script:
-      - ./Dockerfiles/debian/10-slim/manage.sh build clean
+    - "./Dockerfiles/debian/10-slim/manage.sh build clean"
   - services:
     - docker
     name: Debian 11 (Bullseye)
     script:
-      - ./Dockerfiles/debian/11/manage.sh build clean
+    - "./Dockerfiles/debian/11/manage.sh build clean"
   - services:
     - docker
     name: Debian 11 (Bullseye Slim)
     script:
-      - ./Dockerfiles/debian/11-slim/manage.sh build clean
+    - "./Dockerfiles/debian/11-slim/manage.sh build clean"
   - services:
     - docker
     name: Ubuntu 16.04 (Xenial Xerus / Xenial)
     script:
-      - ./Dockerfiles/ubuntu/16.04/manage.sh build clean
+    - "./Dockerfiles/ubuntu/16.04/manage.sh build clean"
   - services:
     - docker
     name: Ubuntu 18.04 (Bionic Beaver / Bionic)
     script:
-      - ./Dockerfiles/ubuntu/18.04/manage.sh build clean
+    - "./Dockerfiles/ubuntu/18.04/manage.sh build clean"
   - services:
     - docker
     name: Ubuntu 20.04 (Focal Fossa / Focal)
     script:
-      - ./Dockerfiles/ubuntu/20.04/manage.sh build clean
+    - "./Dockerfiles/ubuntu/20.04/manage.sh build clean"
   - services:
     - docker
     name: Dockerfile Linting (Hadolint)
@@ -80,17 +80,8 @@ matrix:
     script:
     - "./hadolint/scan.sh"
   - language: ruby
-    name: Github Linguist (rvm 2.7)
-    rvm: 2.7
-    before_install:
-    - git clone https://github.com/TravisToolbox/github-linguist
-    install:
-    - "./github-linguist/install.sh"
-    script:
-    - "./github-linguist/scan.sh"
-  - language: ruby
-    name: YAML Linting (rvm 2.7)
-    rvm: 2.7
+    name: YAML Linting (rvm 3.0)
+    rvm: 3.0
     before_install:
     - git clone https://github.com/TravisToolbox/yaml-lint
     install:
@@ -108,8 +99,8 @@ matrix:
     script:
     - "./shellcheck/scan.sh"
   - language: ruby
-    name: Link Checking (rvm 2.7)
-    rvm: 2.7
+    name: Link Checking (rvm 3.0)
+    rvm: 3.0
     env:
     - WHITELIST="https://img.shields.io"
     - EXCLUDE_FILES="CHANGELOG.md"
@@ -122,4 +113,4 @@ matrix:
 notifications:
   email: false
   slack:
-    secure: Gqm31pXA8L9oqmTddneCEx/HFsZJkNxJd0cujsTbSoyODYtFwGOz8+JtpAtc36vYyJi7XFhECKZSVLRcQXrD5/c53w86zxUHYI16kVYb2zHCm3+jl4Cak5+X8btzVUrC902Op0bH6tCIf1SWBuSsYgaH2Ot2ksUTt9Frx83ozQnBM/Jt21Kv5zMmMx2dFuki4vX+8fHlyPS11pcntCVpJFlcxXZEMl4K3jDg5dAeKi+EOiNcT3bgunzP89c5DUGrgi3+MkwAc5EREeJ09AwOAWcQmtUkzg29gFQuM6kZ4e84Fkxh+P09SXa+9TaInqMea4f59LHJ4UDgfNkbHufe9GUXEDwvvdB6wZ895n8wpi2RzT+nODolzSMSULqDXT7IH2iBpuuiFQxMTOPEDzsCIeiQCVjZdnKKr/y7Mnka4fZY1aE8VbskNaJf327CbKKVArEKQ3pc4eliU8xrsKp56zGoWE4lQqUeCkZvpER6Y7wENlsjEqNvkqw6ZzBtCYBqsR2mOAjo+xYy+j3eYxaPzvExRDLRlseF5MaQo6/bU5bHa4Om36lSq0bPREtQQ6jraKoP6FWUSUV3Bgu+TvpHAj+lhf0i2l7p6PyjnR52X04vcKcbBmVnK2codLzJwhexuwQyoZRlTvLpVRAvp/aE/JEYwLwbU4CIt6hL5Dwwi4o=
+    secure: frQcT/Ui/ac4WsfVHCcOkBheWHe/AZ1ak1eKwL3Gr1M8NkN+hP6lva4MrDeblqfuypbPHv4BFVhsGz8A2XJF6tU4oDytptjMl5irf+gkJ6BHYOBnO/SHWWypiZCQQRV7/+/vim1Mq0e5ZeCg7tb9IicCcQbB/IakfNloIfIb7b36fDSeIZuelqPmsxV/KTPX0p7PTdAiURT0Ds5vz4WPL3EDYO/kmxjscBSBjaKjYfxi5n+JgJGTmj9UFWlCi9WWWfSYu+IHXTsqwuVKSedbtT/zSZjjbgCoDZhyykKsXa4CuLxb4mE7nWFYPwG+ktFYuSeFDIUY+Vjle/trQWQJ7t6bfDmHBJpRYfmkFh0+GAUOo6uzgDvZCk2ox6Jws4wJYGtH7YxU9Ef2arg7FaiQAqNxh5vflXHpVR5mZg5PreubkWwO02LB/QDACFhoLtE5fC+uq02FfyDum6eC5OdXWnAHNVMHwbf3L94k5n65hEZWcwkmr7THsY8ADsVqd70w3+k+suYywgXfm45BNj1iIXP2lHGeWLZ11x0zFRwRR7bD1oAYjnv9vsuvmGlRNXSiXT0b7ZOIpow9JBXvW+hKcOT7OtN2XmlIKqSRDSRuv7QkndpbI1aPTpFn+7azXbMg4Qjc17knQufll7yg5DNMB1bNwuj7IN+C+vWDIbwtQEE=

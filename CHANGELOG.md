@@ -5,9 +5,9 @@ All notable changes to this project will be documented in this file.
 
 This changelog was automatically generated using [Caretaker](https://github.com/DevelopersToolbox/caretaker) by [Wolf Software](https://github.com/WolfSoftware)
 
-### [v0.1.0](https://github.com/DockerToolbox/goenv/releases/v0.1.0)
+### [Unreleased](https://github.com/DockerToolbox/goenv/compare/v0.1.0...HEAD)
 
-> Released on February, 19th 2021
+- Fix travis rvm versions and slack integration [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
 
-- The initial commit [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+- The initial commit [`[63bdd44]`](https://github.com/DockerToolbox/goenv/commit/63bdd447ef11b36777bb0f395024ddb8cf593625)
 
