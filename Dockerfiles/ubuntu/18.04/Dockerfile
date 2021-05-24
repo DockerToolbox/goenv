@@ -22,3 +22,4 @@ RUN apt-get update && \
 WORKDIR /root
 
 ENTRYPOINT ["/bin/bash"]
+

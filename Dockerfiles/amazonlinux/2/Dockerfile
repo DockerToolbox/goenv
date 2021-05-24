@@ -5,8 +5,9 @@ RUN yum makecache && \
 	yum install -y \ 
 		ca-certificates-2019.2.32 \ 
 		curl-7.61.1 \ 
-		git-2.23.3 \ 
-		tar-1.26 \
+		git-2.23.4 \ 
+		tar-1.26 \ 
+		yum-plugin-remove-with-leaves-1.1.31 \
 		&& \
 	git clone https://github.com/syndbg/goenv.git ~/.goenv && \
 	echo 'export GOENV_ROOT=${HOME}/.goenv' >> ~/.bashrc && \
@@ -21,3 +22,4 @@ RUN yum makecache && \
 WORKDIR /root
 
 ENTRYPOINT ["/bin/bash"]
+
