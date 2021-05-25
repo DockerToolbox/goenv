@@ -1,10 +1,10 @@
 FROM debian:bullseye
 
 # hadolint ignore=SC2016
-RUN apt-get update && \ 
-	apt-get -y --no-install-recommends install \ 
-		ca-certificates=20210119 \ 
-		curl=7.74.0-1.2 \ 
+RUN apt-get update && \
+	apt-get -y --no-install-recommends install \
+		ca-certificates=20210119 \
+		curl=7.74.0-1.2 \
 		git=1:2.30.2-1 \
 		&& \
 	git clone https://github.com/syndbg/goenv.git ~/.goenv && \

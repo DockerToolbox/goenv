@@ -110,7 +110,18 @@ function generate_container()
     ENTRYPOINT=$(<Templates/entrypoint.tpl)
 
     REPO_ROOT=$(r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}" && pwd)
-    PACKAGES=$(get-versions -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}")
+
+    if [[ "${CONTAINER_OS_NAME}" == "alpine" ]]; then
+        CONTAINER_SHELL="ash"
+    else
+        CONTAINER_SHELL="bash"
+    fi
+
+    PACKAGES=$(get-versions -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}" -s "${CONTAINER_SHELL}")
+    if [[ -f "Templates/static-packages.tpl" ]]; then
+        STATIC=$(<Templates/static-packages.tpl)
+        PACKAGES=$(printf "%s\n%s" "${PACKAGES}" "${STATIC}")
+    fi
 
     cp Dockerfile Dockerfile.bak
 
@@ -119,7 +130,6 @@ FROM ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}
 
 ${LINT}
 ${PACKAGES}
-		&& \\
 ${INSTALL}
 ${CLEANUP}
 

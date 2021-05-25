@@ -1,10 +1,10 @@
 FROM debian:stretch
 
 # hadolint ignore=SC2016
-RUN apt-get update && \ 
-	apt-get -y --no-install-recommends install \ 
-		ca-certificates=20200601~deb9u2 \ 
-		curl=7.52.1-5+deb9u14 \ 
+RUN apt-get update && \
+	apt-get -y --no-install-recommends install \
+		ca-certificates=20200601~deb9u2 \
+		curl=7.52.1-5+deb9u14 \
 		git=1:2.11.0-3+deb9u7 \
 		&& \
 	git clone https://github.com/syndbg/goenv.git ~/.goenv && \
