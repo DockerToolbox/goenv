@@ -1,1 +1,1 @@
-../../../../Scripts/install.tpl
+../../../../Templates/install.tpl

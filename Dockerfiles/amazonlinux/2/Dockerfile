@@ -15,7 +15,9 @@ RUN yum makecache && \
 	echo 'eval "$(goenv init -)"' >> ~/.bashrc && \
 	echo 'export PATH=${GOROOT}/bin:${PATH}' >> ~/.bashrc && \
 	echo 'export PATH=${GOPATH}/bin:${PATH}' >> ~/.bashrc && \
-	yum autoremove -y && \
+	yum remove -y --remove-leaves \
+		git \
+		&& \
 	yum clean all && \
 	rm -rf /var/cache/yum
 

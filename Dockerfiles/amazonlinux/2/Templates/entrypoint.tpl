@@ -1,3 +1,1 @@
-WORKDIR /root
-
-ENTRYPOINT ["/bin/bash"]
+../../../../Templates/entrypoint.tpl

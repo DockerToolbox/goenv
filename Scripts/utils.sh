@@ -99,12 +99,10 @@ function generate_container()
 {
     echo "${fgGreen}${bold}Generating new Dockerfile for ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}${reset}"
 
-    check_template "Templates/lint.tpl"
     check_template "Templates/install.tpl"
     check_template "Templates/cleanup.tpl"
     check_template "Templates/entrypoint.tpl"
 
-    LINT=$(<Templates/lint.tpl)
     INSTALL=$(<Templates/install.tpl)
     CLEANUP=$(<Templates/cleanup.tpl)
     ENTRYPOINT=$(<Templates/entrypoint.tpl)
@@ -113,8 +111,10 @@ function generate_container()
 
     if [[ "${CONTAINER_OS_NAME}" == "alpine" ]]; then
         CONTAINER_SHELL="ash"
+        CONTAINER_LINT="# hadolint ignore=SC2016,DL3018,DL4006"
     else
         CONTAINER_SHELL="bash"
+        CONTAINER_LINT="# hadolint ignore=SC2016"
     fi
 
     PACKAGES=$(get-versions -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}" -s "${CONTAINER_SHELL}")
@@ -128,7 +128,7 @@ function generate_container()
     cat >Dockerfile <<EOL
 FROM ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}
 
-${LINT}
+${CONTAINER_LINT}
 ${PACKAGES}
 ${INSTALL}
 ${CLEANUP}
