@@ -67,6 +67,9 @@ function manage_container()
         build)
             build_container "${clean}"
             ;;
+        scan)
+            scan_container
+            ;;
         publish)
             publish_container "${tags}"
             ;;
@@ -123,8 +126,11 @@ function generate_container()
         PACKAGES=$(printf "%s\n%s" "${PACKAGES}" "${STATIC}")
     fi
 
-    cp Dockerfile Dockerfile.bak
+    if [[ -f "Dockerfile" ]]; then
+        cp Dockerfile Dockerfile.bak
+    fi
 
+    touch Dockerfile
     cat >Dockerfile <<EOL
 FROM ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}
 
@@ -153,6 +159,13 @@ function build_container()
         docker build --pull -t "${LOCAL_CONTAINER_NAME}" .
         echo "${fgGreen}${bold}Build Complete: ${LOCAL_CONTAINER_NAME}${reset}"
     fi
+}
+
+function scan_container()
+{
+    echo "${fgGreen}${bold}Scanning: ${LOCAL_CONTAINER_NAME}${reset}"
+    docker scan "${LOCAL_CONTAINER_NAME}"
+    echo "${fgGreen}${bold}Scan Complete: ${LOCAL_CONTAINER_NAME}${reset}"
 }
 
 function get_image_id()
