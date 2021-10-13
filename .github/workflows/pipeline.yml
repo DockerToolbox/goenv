@@ -2,6 +2,19 @@ name: pipeline
 on: [push, pull_request]
     
 jobs:
+  amazonlinux:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ '1', '2' ]
+    name: Build Test on Amazon Linux ${{ matrix.version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Docker
+        uses: docker-practice/actions-setup-docker@master
+      - name: Run
+        run: |
+          Dockerfiles/amazonlinux/${{ matrix.version }}/manage.sh build
   centos:
     runs-on: ubuntu-latest
     strategy:
@@ -15,6 +28,32 @@ jobs:
       - name: Run
         run: |
           Dockerfiles/centos/${{ matrix.version }}/manage.sh build
+  debian:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ '9', '9-slim', '10', '10-slim', '11', '11-slim' ]
+    name: Build Test on Debian ${{ matrix.version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Docker
+        uses: docker-practice/actions-setup-docker@master
+      - name: Run
+        run: |
+          Dockerfiles/debian/${{ matrix.version }}/manage.sh build
+  ubuntu:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ '16.04', '18.04', '20.04' ]
+    name: Build Test on Ubuntu ${{ matrix.version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Docker
+        uses: docker-practice/actions-setup-docker@master
+      - name: Run
+        run: |
+          Dockerfiles/ubuntu/${{ matrix.version }}/manage.sh build
   awesomebot:
     name: Awesomebot
     runs-on: ubuntu-latest
@@ -52,6 +91,10 @@ jobs:
     if: always()
     name: Slack Post Workflow Notification
     needs:
+      - amazonlinux
+      - centos
+      - debian
+      - ubuntu
       - awesomebot
       - shellcheck
       - yaml-lint
