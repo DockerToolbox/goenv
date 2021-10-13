@@ -69,7 +69,7 @@ We try to offer as many operating system flavours as possible, but we only use c
   wolfsoftwareltd/goenv-<os>:<version> e.g. wolfsoftwareltd/goenv-debian:10
 ```
 
-## Usage
+## Development
 
 ### Generate Dockerfiles
 
