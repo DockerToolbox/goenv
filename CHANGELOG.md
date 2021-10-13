@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - update [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
 
+- update [`[7862f51]`](https://github.com/DockerToolbox/goenv/commit/7862f51c44d8ab9406b89e5faf4afc02fb8509b9)
+
 - Added a scan option to the management script and fixed and error when no Dockerfile exists [`[8cc8cb4]`](https://github.com/DockerToolbox/goenv/commit/8cc8cb4019dec1547ee7d5e1313244ffa14d0dfc)
 
 ### [v0.1.1](https://github.com/DockerToolbox/goenv/compare/v0.1.0...v0.1.1)
