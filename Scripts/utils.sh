@@ -81,6 +81,7 @@ function manage_container()
 
 function set_colours()
 {
+    export TERM=xterm
     fgRed=$(tput setaf 1)
     fgGreen=$(tput setaf 2)
     fgYellow=$(tput setaf 3)
