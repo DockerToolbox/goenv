@@ -14,7 +14,6 @@ jobs:
         uses: docker-practice/actions-setup-docker@master
       - name: Run
         run: |
-          Dockerfiles/centos/${{ matrix.version }}/manage.sh generate
           Dockerfiles/centos/${{ matrix.version }}/manage.sh build
   awesomebot:
     name: Awesomebot
