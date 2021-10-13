@@ -121,7 +121,7 @@ function generate_container()
         CONTAINER_LINT="# hadolint ignore=SC2016"
     fi
 
-    PACKAGES=$(get-versions -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}" -s "${CONTAINER_SHELL}")
+    PACKAGES=$("${REPO_ROOT}"/Scripts/get-versions.sh -g "${REPO_ROOT}"/Scripts/version-grabber.sh -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}" -s "${CONTAINER_SHELL}")
     if [[ -f "Templates/static-packages.tpl" ]]; then
         STATIC=$(<Templates/static-packages.tpl)
         PACKAGES=$(printf "%s\n%s" "${PACKAGES}" "${STATIC}")
