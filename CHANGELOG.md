@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DockerToolbox/goenv/compare/v0.1.2...HEAD)
 
-- Added a scan option to the management script and fixed and error when no Dockerfile exists [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+- update [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+
+- Added a scan option to the management script and fixed and error when no Dockerfile exists [`[8cc8cb4]`](https://github.com/DockerToolbox/goenv/commit/8cc8cb4019dec1547ee7d5e1313244ffa14d0dfc)
 
 ### [v0.1.1](https://github.com/DockerToolbox/goenv/compare/v0.1.0...v0.1.1)
 

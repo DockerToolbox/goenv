@@ -4,7 +4,7 @@ FROM debian:bullseye
 RUN apt-get update && \
 	apt-get -y --no-install-recommends install \
 		ca-certificates=20210119 \
-		curl=7.74.0-1.2 \
+		curl=7.74.0-1.3+b1 \
 		git=1:2.30.2-1 \
 		&& \
 	git clone https://github.com/syndbg/goenv.git ~/.goenv && \

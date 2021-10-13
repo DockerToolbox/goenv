@@ -3,9 +3,9 @@ FROM ubuntu:18.04
 # hadolint ignore=SC2016
 RUN apt-get update && \
 	apt-get -y --no-install-recommends install \
-		ca-certificates=20210119~18.04.1 \
-		curl=7.58.0-2ubuntu3.13 \
-		git=1:2.17.1-1ubuntu0.8 \
+		ca-certificates=20210119~18.04.2 \
+		curl=7.58.0-2ubuntu3.16 \
+		git=1:2.17.1-1ubuntu0.9 \
 		&& \
 	git clone https://github.com/syndbg/goenv.git ~/.goenv && \
 	echo 'export GOENV_ROOT=${HOME}/.goenv' >> ~/.bashrc && \

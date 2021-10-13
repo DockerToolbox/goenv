@@ -3,9 +3,9 @@ FROM amazonlinux:2
 # hadolint ignore=SC2016
 RUN yum makecache && \
 	yum install -y \
-		ca-certificates-2019.2.32 \
-		curl-7.61.1 \
-		git-2.23.4 \
+		ca-certificates-2021.2.50 \
+		curl-7.76.1 \
+		git-2.32.0 \
 		tar-1.26 \
 		yum-plugin-remove-with-leaves-1.1.31 \
 		&& \
