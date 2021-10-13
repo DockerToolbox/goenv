@@ -51,6 +51,7 @@ We try to offer as many operating system flavours as possible, but we only use c
 | [Debian 10 (Buster Slim)](Dockerfiles/debian/10-slim/Dockerfile)    | [wolfsoftwareltd/goenv-debian](https://hub.docker.com/r/wolfsoftwareltd/goenv-debian)           | 10-slim, buster-slim        |
 | [Debian 11 (Bullseye)](Dockerfiles/debian/11/Dockerfile)            | [wolfsoftwareltd/goenv-centos](https://hub.docker.com/r/wolfsoftwareltd/goenv-centos)           | 11, bullseye, latest        |
 | [Debian 11 (Bullseye Slim)](Dockerfiles/debian/11-slim/Dockerfile)  | [wolfsoftwareltd/goenv-debian](https://hub.docker.com/r/wolfsoftwareltd/goenv-debian)           | 11-slim, bullseye-slim      |
+| [Ubuntu 14.04 (Trusty Tahr)](Dockerfiles/ubuntu/14.04/Dockerfile)   | [wolfsoftwareltd/goenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/goenv-ubuntu)           | 14.04, trusty               |
 | [Ubuntu 16.04 (Xenial Xerus)](Dockerfiles/ubuntu/16.04/Dockerfile)  | [wolfsoftwareltd/goenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/goenv-ubuntu)           | 16.04, xenial               |
 | [Ubuntu 18.04 (Bionic Beaver)](Dockerfiles/ubuntu/18.04/Dockerfile) | [wolfsoftwareltd/goenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/goenv-ubuntu)           | 18.04, bionic               |
 | [Ubuntu 20.04 (Focal Fossa)](Dockerfiles/ubuntu/20.04/Dockerfile)   | [wolfsoftwareltd/goenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/goenv-ubuntu)           | 20.04, focal, latest        |
