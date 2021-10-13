@@ -104,9 +104,9 @@ jobs:
     name: Slack Post Workflow Notification
     needs:
       - amazonlinux
-      - centos
-      - debian
-      - ubuntu
+#      - centos
+#      - debian
+#      - ubuntu
       - awesomebot
       - shellcheck
       - yaml-lint
