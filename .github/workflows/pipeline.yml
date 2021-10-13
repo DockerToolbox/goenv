@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         version: [ '1', '2' ]
-    name: Build Test on Amazon Linux ${{ matrix.version }}
+    name: Build on Amazon Linux ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Docker
@@ -21,40 +21,43 @@ jobs:
     strategy:
       matrix:
         version: [ '7', '8' ]
-    name: Build Test on Centos ${{ matrix.version }}
+    name: Build on Centos ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
+      - name: Generate Dockerfile for Centos ${{ matrix.version }}
+        run: Dockerfiles/centos/${{ matrix.version }}/manage.sh generate
       - name: Build on Centos ${{ matrix.version }}
-        run: |
-          Dockerfiles/centos/${{ matrix.version }}/manage.sh build clean
+        run: Dockerfiles/centos/${{ matrix.version }}/manage.sh build clean
   debian:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         version: [ '9', '9-slim', '10', '10-slim', '11', '11-slim' ]
-    name: Build Test on Debian ${{ matrix.version }}
+    name: Build on Debian ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
-      - name: Build Test on Debian ${{ matrix.version }}
-        run: |
-          Dockerfiles/debian/${{ matrix.version }}/manage.sh build clean
+      - name: Generate Dockerfile for Debian ${{ matrix.version }}
+        run: Dockerfiles/debian/${{ matrix.version }}/manage.sh generate
+      - name: Build on Debian ${{ matrix.version }}
+        run: Dockerfiles/debian/${{ matrix.version }}/manage.sh build clean
   ubuntu:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         version: [ '16.04', '18.04', '20.04' ]
-    name: Build Test on Ubuntu ${{ matrix.version }}
+    name: Build on Ubuntu ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
-      - name: Build Test on Ubuntu ${{ matrix.version }}
-        run: |
-          Dockerfiles/ubuntu/${{ matrix.version }}/manage.sh build clean
+      - name: Generate Dockerfile for Ubuntu ${{ matrix.version }}
+        run: Dockerfiles/ubuntu/${{ matrix.version }}/manage.sh generate
+      - name: Build on Ubuntu ${{ matrix.version }}
+        run: Dockerfiles/ubuntu/${{ matrix.version }}/manage.sh build clean
   awesomebot:
     name: Awesomebot
     runs-on: ubuntu-latest
