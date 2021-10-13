@@ -12,9 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
-      - name: Run
+      - name: Build on Amazon Linux ${{ matrix.version }}
         run: |
-          Dockerfiles/amazonlinux/${{ matrix.version }}/manage.sh build
+          Dockerfiles/amazonlinux/${{ matrix.version }}/manage.sh build clean
   centos:
     runs-on: ubuntu-latest
     strategy:
@@ -25,9 +25,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
-      - name: Run
+      - name: Build on Centos ${{ matrix.version }}
         run: |
-          Dockerfiles/centos/${{ matrix.version }}/manage.sh build
+          Dockerfiles/centos/${{ matrix.version }}/manage.sh build clean
   debian:
     runs-on: ubuntu-latest
     strategy:
@@ -38,9 +38,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
-      - name: Run
+      - name: Build Test on Debian ${{ matrix.version }}
         run: |
-          Dockerfiles/debian/${{ matrix.version }}/manage.sh build
+          Dockerfiles/debian/${{ matrix.version }}/manage.sh build clean
   ubuntu:
     runs-on: ubuntu-latest
     strategy:
@@ -51,9 +51,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
-      - name: Run
+      - name: Build Test on Ubuntu ${{ matrix.version }}
         run: |
-          Dockerfiles/ubuntu/${{ matrix.version }}/manage.sh build
+          Dockerfiles/ubuntu/${{ matrix.version }}/manage.sh build clean
   awesomebot:
     name: Awesomebot
     runs-on: ubuntu-latest
