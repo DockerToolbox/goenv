@@ -4,6 +4,7 @@ set -e
 
 DOCKER_HUB_ORG='wolfsoftwareltd'
 CONTAINER_PREFIX='goenv'
+CONTAINER_PARENT='wolfsoftwareltd/anyenv-'
 
 function setup()
 {
@@ -139,7 +140,7 @@ function generate_container()
 
     touch Dockerfile
     cat >Dockerfile <<EOL
-FROM ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}
+FROM ${CONTAINER_PARENT}${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}
 
 ${CONTAINER_LINT}
 ${PACKAGES}
