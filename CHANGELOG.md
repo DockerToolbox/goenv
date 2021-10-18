@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DockerToolbox/goenv/compare/v0.1.2...HEAD)
 
-- update [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+- Resolved missing lib to make it work on alpine [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+
+- update [`[552b334]`](https://github.com/DockerToolbox/goenv/commit/552b334edfdc7c0ca62c10affc2bb5c68a2e6133)
 
 - update [`[d168065]`](https://github.com/DockerToolbox/goenv/commit/d16806554c5f7e308e21801189082a6fb91f8d9d)
 

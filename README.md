@@ -37,10 +37,12 @@ This is a selection of Docker containers preinstalled with [goenv](https://githu
 
 We try to offer as many operating system flavours as possible, but we only use currently supported versions of each one.
 
-> We do not provide Alpine containers as goenv does not work within Alpine containers currently.
-
 | Dockerfile | Docker Hub Repo | Docker Hub Tags |
 | --- | --- | --- |
+| [Alpine Linux 3.11](Dockerfiles/alpine/3.11/Dockerfile)             | [wolfsoftwareltd/goenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/goenv-alpine)           | 3.11                        |
+| [Alpine Linux 3.12](Dockerfiles/alpine/3.12/Dockerfile)             | [wolfsoftwareltd/goenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/goenv-alpine)           | 3.12                        |
+| [Alpine Linux 3.13](Dockerfiles/alpine/3.13/Dockerfile)             | [wolfsoftwareltd/goenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/goenv-alpine)           | 3.13                        |
+| [Alpine Linux 3.14](Dockerfiles/alpine/3.14/Dockerfile)             | [wolfsoftwareltd/goenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/goenv-alpine)           | 3.14, latest                |
 | [Amazon Linux 1](Dockerfiles/amazonlinux/1/Dockerfile)              | [wolfsoftwareltd/goenv-amazonlinux](https://hub.docker.com/r/wolfsoftwareltd/goenv-amazonlinux) | 1                           |
 | [Amazon Linux 2](Dockerfiles/amazonlinux/2/Dockerfile)              | [wolfsoftwareltd/goenv-amazonlinux](https://hub.docker.com/r/wolfsoftwareltd/goenv-amazonlinux) | 2, latest                   |
 | [Centos 7](Dockerfiles/centos/7/Dockerfile)                         | [wolfsoftwareltd/goenv-centos](https://hub.docker.com/r/wolfsoftwareltd/goenv-centos)           | 7,                          |
@@ -79,7 +81,7 @@ We try to offer as many operating system flavours as possible, but we only use c
 This can be done from any level of the directory tree and is recursive.
 
 ```
-./manange-all.sh generate
+./manage-all.sh generate
 ```
 
 ### Build Containers
@@ -87,7 +89,7 @@ This can be done from any level of the directory tree and is recursive.
 This can be done from any level of the directory tree and is recursive.
 
 ```
-./manange-all.sh build [clean]
+./manage-all.sh build [clean]
 ```
 
 ### Scan Containers
@@ -95,7 +97,7 @@ This can be done from any level of the directory tree and is recursive.
 This can be done from any level of the directory tree and is recursive.
 
 ```
-./manange-all.sh scan
+./manage-all.sh scan
 ```
 
 ### Publish Containers
@@ -103,7 +105,7 @@ This can be done from any level of the directory tree and is recursive.
 This can be done from any level of the directory tree and is recursive.
 
 ```
-./manange-all.sh publish
+./manage-all.sh publish
 ```
 
 If you want to publish the containers you will need to update the [utils.sh](Scripts/utils.sh) script and change the following lines.
