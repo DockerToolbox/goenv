@@ -6,24 +6,24 @@ on:
     - cron:  '0 3 * * 1'
     
 jobs:
-#  alpine:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        version: [ '3.11', '3.12', '3.13', '3.14' ]
-#    name: Build on Alpine Linux ${{ matrix.version }}
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Set up Docker
-#        uses: docker-practice/actions-setup-docker@master
-#      - name: Generate Dockerfile for Alpine Linux ${{ matrix.version }}
-#        run: Dockerfiles/alpine/${{ matrix.version }}/manage.sh generate
-#      - name: Build on Alpine Linux ${{ matrix.version }}
-#        run: Dockerfiles/alpine/${{ matrix.version }}/manage.sh build clean
-#      - name: Login to Docker Hub
-#        run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login --username ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
-#      - name: Publish Container
-#        run: Dockerfiles/alpine/${{ matrix.version }}/manage.sh publish
+  alpine:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ '3.11', '3.12', '3.13', '3.14' ]
+    name: Build on Alpine Linux ${{ matrix.version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Docker
+        uses: docker-practice/actions-setup-docker@master
+      - name: Generate Dockerfile for Alpine Linux ${{ matrix.version }}
+        run: Dockerfiles/alpine/${{ matrix.version }}/manage.sh generate
+      - name: Build on Alpine Linux ${{ matrix.version }}
+        run: Dockerfiles/alpine/${{ matrix.version }}/manage.sh build clean
+      - name: Login to Docker Hub
+        run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login --username ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
+      - name: Publish Container
+        run: Dockerfiles/alpine/${{ matrix.version }}/manage.sh publish
   amazonlinux:
     runs-on: ubuntu-latest
     strategy:
@@ -133,7 +133,7 @@ jobs:
     if: always()
     name: Slack Post Workflow Notification
     needs:
-#      - alpine
+      - alpine
       - amazonlinux
       - centos
       - debian
