@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DockerToolbox/goenv/compare/v0.1.2...HEAD)
 
-- Path inherited from parent so not required [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+- Major streamline of container and build process [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+
+- Path inherited from parent so not required [`[1aeadaf]`](https://github.com/DockerToolbox/goenv/commit/1aeadafd6358a5025d2f840a4b7ec64ac59a1bc8)
 
 - Switch from raw install to use anyenv [`[12833bb]`](https://github.com/DockerToolbox/goenv/commit/12833bbf8865ba6388bb75df0bf8d3e2794e0cec)
 

@@ -1,1 +1,0 @@
-	anyenv install goenv && \
