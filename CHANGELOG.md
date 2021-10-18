@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DockerToolbox/goenv/compare/v0.1.2...HEAD)
 
-- Major streamline of container and build process [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+- Update [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
+
+- Major streamline of container and build process [`[0a16de4]`](https://github.com/DockerToolbox/goenv/commit/0a16de409df4bc713af81c75c38476c02d9b6577)
 
 - Path inherited from parent so not required [`[1aeadaf]`](https://github.com/DockerToolbox/goenv/commit/1aeadafd6358a5025d2f840a4b7ec64ac59a1bc8)
 
