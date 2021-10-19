@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - update [`[head]`](https://github.com/DockerToolbox/goenv/commit/)
 
+- update [`[6487551]`](https://github.com/DockerToolbox/goenv/commit/6487551c336a91e40c7a204cdcae5d2748573701)
+
 - Update [`[3e23c39]`](https://github.com/DockerToolbox/goenv/commit/3e23c392c9537ad259ac6e4a4c1c32c051e3bad6)
 
 - Major streamline of container and build process [`[0a16de4]`](https://github.com/DockerToolbox/goenv/commit/0a16de409df4bc713af81c75c38476c02d9b6577)
